@@ -2,7 +2,7 @@ const canvas: HTMLCanvasElement =
     document.getElementById("spriteEditor") as HTMLCanvasElement;
 const ctx: CanvasRenderingContext2D = canvas.getContext("2d") as CanvasRenderingContext2D;
 
-requestAnimationFrame(_global_update)
+// requestAnimationFrame(_global_update)
 canvas.addEventListener("mousemove", _mouse_update);
 canvas.addEventListener("mousedown", function(e){mouseDown = true;mouseButton = e.button;});
 canvas.addEventListener("mouseup", function(e){mouseDown = false});
@@ -31,12 +31,14 @@ function _global_update() {
     );
     if (in_canvas) {
         if (mouseTimer > 0 && mouseButton == 0) {
+            ctx.
             ctx.fillRect(mouseX, mouseY, 1, 1)
         }
     }
 
-    requestAnimationFrame(_global_update);
+    _global_update()
 }
+_global_update()
 
 function region_has_point(
 x1: number, y1: number, x2: number, y2: number, xv: number, yv: number) {

@@ -1,6 +1,6 @@
 const canvas: HTMLCanvasElement = 
     document.getElementById("spriteEditor") as HTMLCanvasElement;
-const ctx: CanvasRenderingContext2D = canvas.getContext("2d");
+const ctx: CanvasRenderingContext2D = canvas.getContext("2d") as CanvasRenderingContext2D;
 
 requestAnimationFrame(_global_update)
 canvas.addEventListener("mousemove", _mouse_update);

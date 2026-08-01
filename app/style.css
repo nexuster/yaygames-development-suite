@@ -1,0 +1,12 @@
+body {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-size: 32px;
+    background-color: rgb(54, 50, 63);
+}
+
+canvas {
+    width: 512px;
+    height: 512px;
+    image-rendering: pixelated;
+    background-color: grey;
+}

@@ -1,12 +1,19 @@
 body {
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
     font-size: 32px;
-    background-color: rgb(54, 50, 63);
+    background-color: rgb(255, 255, 255);
 }
 
 canvas {
     width: 512px;
     height: 512px;
     image-rendering: pixelated;
-    background-color: grey;
+    background-color: rgb(224, 218, 218);
+}
+
+.color {
+    background-color: black;
+    margin: 0px;
+    width: 64px;
+    height: 64px;
 }

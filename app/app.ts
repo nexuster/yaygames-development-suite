@@ -1,8 +1,8 @@
 const canvas: HTMLCanvasElement = 
     document.getElementById("spriteEditor") as HTMLCanvasElement;
 const ctx: CanvasRenderingContext2D = canvas.getContext("2d") as CanvasRenderingContext2D;
+ctx.fillRect(0, 0, 100, 100)
 
-// requestAnimationFrame(_global_update)
 canvas.addEventListener("mousemove", _mouse_update);
 canvas.addEventListener("mousedown", function(e){mouseDown = true;mouseButton = e.button;});
 canvas.addEventListener("mouseup", function(e){mouseDown = false});
@@ -16,9 +16,7 @@ var mouseButton: number;
 function _mouse_update(e: MouseEvent) {
     mouseX = e.pageX;
     mouseY = e.pageY;
-}
 
-function _global_update() {
     if (mouseDown) {
         mouseTimer++;
     } else {
@@ -30,15 +28,14 @@ function _global_update() {
         mouseX, mouseY
     );
     if (in_canvas) {
-        if (mouseTimer > 0 && mouseButton == 0) {
-            ctx.
-            ctx.fillRect(mouseX, mouseY, 1, 1)
+        if (mouseTimer > 0 && mouseButton == 1) {
+            const rect = canvas.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            ctx.fillRect(x, y, 1, 1)
         }
     }
-
-    _global_update()
 }
-_global_update()
 
 function region_has_point(
 x1: number, y1: number, x2: number, y2: number, xv: number, yv: number) {

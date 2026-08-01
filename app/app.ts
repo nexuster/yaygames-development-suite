@@ -1,8 +1,6 @@
 const canvas: HTMLCanvasElement = 
     document.getElementById("spriteEditor") as HTMLCanvasElement;
-if (canvas) {
-    const ctx = canvas.getContext("2d");
-}
+const ctx: CanvasRenderingContext2D = canvas.getContext("2d");
 
 requestAnimationFrame(_global_update)
 canvas.addEventListener("mousemove", _mouse_update);
@@ -26,6 +24,17 @@ function _global_update() {
     } else {
         mouseTimer = 0;
     }
+    var in_canvas = box_has_point(
+        0, 0,
+        512, 512,
+        mouseX, mouseY
+    );
+    if (in_canvas) {
+        if (mouseTimer > 0 && mouseButton == 0) {
+            ctx.fillRect(mouseX, mouseY, 1, 1)
+        }
+    }
+
     requestAnimationFrame(_global_update);
 }
 
